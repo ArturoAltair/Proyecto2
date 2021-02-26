@@ -5,7 +5,7 @@ class Resultado extends React.Component{
     render() {
         return(
             <div>
-                <p>Resulatdo de la multiplicación {this.props.numero}</p>
+                <p>El resultado de multiplicar por {this.props.multiplicador} es de: {this.props.numero}</p>
             </div>
         )
     }

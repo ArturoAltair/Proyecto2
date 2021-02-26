@@ -11,7 +11,7 @@ class App extends React.Component {
     this.state = {
       numbers: [
         { numero: '0' },
-        { numero: '0' }
+        { multiplicador: '0', numero: '0' }
       ]
     }
   }
@@ -20,7 +20,7 @@ class App extends React.Component {
     this.setState({
       numbers: [
         { numero: event.target.value },
-        { numero: this.state.numbers[1].numero}
+        { multiplicador: this.state.numbers[1].multiplicador, numero: this.state.numbers[1].numero}
       ]
     })
   }
@@ -30,7 +30,7 @@ class App extends React.Component {
     this.setState({
       numbers: [
         { numero: this.state.numbers[0].numero },
-        { numero: this.state.numbers[0].numero*mult }
+        { multiplicador: mult, numero: this.state.numbers[0].numero*mult }
       ]
     })
   }
@@ -43,7 +43,7 @@ class App extends React.Component {
         <Number numero={this.state.numbers[0].numero} cambiando={this.cambiaNumero}></Number>
         <button onClick={() => this.multiplicar('37')}>Por 37</button>
         <button onClick={() => this.multiplicar('43')}>Por 43</button>
-        <Resultado numero={this.state.numbers[1].numero} />
+        <Resultado multiplicador={this.state.numbers[1].multiplicador} numero={this.state.numbers[1].numero} />
       </div>
     )
   }
